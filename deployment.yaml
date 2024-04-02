@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ss-kz-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ss-kz
+  template:
+    metadata:
+      labels:
+        app: ss-kz
+    spec:
+      containers:
+        - name: ss-kz
+          image: 87014243126/ss_kz:ss_kz
+          ports:
+            - containerPort: 4000
