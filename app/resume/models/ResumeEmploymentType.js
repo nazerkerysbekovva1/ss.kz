@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../../../config/db'); // Import the Sequelize connection
 const Resume = require('./Resume')
-const EmploymentType = require('../../employment-type/EmloyementType')
+const EmploymentType = require('../../employment-type/EmploymentType')
 
 const ResumeEmploymentTypes = sequelize.define('ResumeEmploymentTypes', {
   id: {

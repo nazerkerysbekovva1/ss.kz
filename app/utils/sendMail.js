@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Определите функцию для отправки email сообщений
-function sendEmail(to, subject, text) {
+function sendMail(to, subject, text) {
   const mailOptions = {
     from: 'nur20039@gmail.com',
     to: to,
@@ -28,4 +28,4 @@ function sendEmail(to, subject, text) {
   });
 }
 
-module.exports = sendEmail;
+module.exports = sendMail;

@@ -1,7 +1,6 @@
-const sendEmail = require('../utils/sendMail')
+const sendMail = require('../utils/sendMail')
 const Apply = require('./Apply')
 const { NEW, INVITATION, DECLINED } = require('./utils')
-const sendMail = require('../utils/sendMail')
 const Vacancy = require('../vacancy/models/Vacancy')
 const Resume = require('../resume/models/Resume')
 const User = require('../auth/User')
@@ -20,7 +19,7 @@ const createApply = async (req, res) => {
         const vacancy = await Vacancy.findByPk(req.body.vacancyId)
         const user = await User.findByPk(vacancy.userId)
 
-        sendMmail(user.email, `Новый отклик на вакансию ${vacancy.name}`, `
+        sendMail(user.email, `Новый отклик на вакансию ${vacancy.name}`, `
         Имя соискателя: ${resume.first_name}
         Фамилия соискателя: ${resume.last_name}
         Номер соискателя: ${resume.phone}

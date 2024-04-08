@@ -1,7 +1,7 @@
 'use strict';
-module.exports = {
+module.exports = {  //its Specializations file, not applies
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Specializations', {
+    await queryInterface.createTable('Applies', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -47,6 +47,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Specializations');
+    await queryInterface.dropTable('Applies');
   },
 };

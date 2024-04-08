@@ -3,7 +3,7 @@ const Specialization = require('../specializations/models/Specialization')
 const Experience = require('./models/Experience');
 const Vacancy = require('./models/Vacancy');
 const Company = require('../auth/Company');
-const EmploymentType = require('../employment-type/EmloyementType');
+const EmploymentType = require('../employment-type/EmploymentType');
 const { Op } = require('sequelize')
 
 const getExperiences = async (req, res) => {

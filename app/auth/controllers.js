@@ -1,4 +1,4 @@
-const sendEmail = require('../utils/sendMail')
+const sendMail = require('../utils/sendMail')
 const AuthCode = require('./AuthCode')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
@@ -20,7 +20,7 @@ const sendVerificationEmail = (req, res) => {
         code: code,
         valid_till: Date.now() + 120000
     })
-    sendEmail(req.body.email, "Код авторизации ss.kz", code)
+    sendMail(req.body.email, "Код авторизации ss.kz", code)
 
     res.status(200).end();
 }
@@ -173,13 +173,30 @@ const getUserByEmail = async (req, res) => {
     }
 };
 
+const getCompanyById = async (req, res) => {
+    try {
+        const companyId = req.params.id;
+        const company = await Company.findByPk(companyId);
+
+        if (company) {
+            res.status(200).json(company);
+        } else {
+            res.status(404).json({ message: "Company not found" });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
 module.exports = {
     sendVerificationEmail,
     verifyCode,
     signUp,
     logIn, 
     logout,
-    getUserByEmail
+    getUserByEmail,
+    getCompanyById
 }
 
 // HH1687512634708

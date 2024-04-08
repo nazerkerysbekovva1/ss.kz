@@ -5,7 +5,7 @@ const User = require('../../auth/User')
 const Company = require('../../auth/Company')
 const Specialization = require('../../specializations/models/Specialization')
 const Experience = require('./Experience')
-const EmloyementType = require('../../employment-type/EmloyementType')
+const EmploymentType = require('../../employment-type/EmploymentType')
 
 const Vacancy = sequelize.define('Vacancy', {
   name: {
@@ -47,7 +47,7 @@ Vacancy.belongsTo(User, { foreignKey: 'userId' });
 Vacancy.belongsTo(Company, { foreignKey: 'companyId', as: "company" });
 Vacancy.belongsTo(Specialization, { foreignKey: 'specializationId', as: "specialization" });
 Vacancy.belongsTo(Experience, { foreignKey: 'experienceId', as: "experience" });
-Vacancy.belongsTo(EmloyementType, { foreignKey: 'emloyementTypeId', as: "emloyementType" });
+Vacancy.belongsTo(EmploymentType, { foreignKey: 'employmentTypeId', as: "employmentType" });
 
 
 module.exports = Vacancy;

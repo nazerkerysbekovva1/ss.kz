@@ -1,10 +1,10 @@
-const EmloyementType = require('./EmloyementType')
+const EmploymentType = require('./EmploymentType')
 const Resume = require('../resume/models/Resume')
 const ResumeEmploymentType = require('../resume/models/ResumeEmploymentType')
 
 
 const getEmploymentTypes = async (req, res) => {
-    const employmentTypes = await EmloyementType.findAll()
+    const employmentTypes = await EmploymentType.findAll()
     // console.log(employmentTypes);
     res.status(200).send(employmentTypes)
 }
