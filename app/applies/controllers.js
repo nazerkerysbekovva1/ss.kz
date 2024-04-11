@@ -78,11 +78,11 @@ const acceptUser = async (req, res) => {
                 status: INVITATION
             },{
             where: {
-                id: req.body.applyIc
+                id: req.body.applyId
             }
         })
 
-        const apply = await Apply.findByPk(req.body.applyIc)
+        const apply = await Apply.findByPk(req.body.applyId)
         const vacancy = await Vacancy.findByPk(apply.vacancyId)
         const resume = await Resume.findByPk(apply.resumeId)
         const user = await User.findByPk(resume.userId)
@@ -104,11 +104,11 @@ const declineUser = async (req, res) => {
                 status: DECLINED
             },{
             where: {
-                id: req.body.applyIc
+                id: req.body.applyId
             }
         })
 
-        const apply = await Apply.findByPk(req.body.applyIc)
+        const apply = await Apply.findByPk(req.body.applyId)
         const vacancy = await Vacancy.findByPk(apply.vacancyId)
         const resume = await Resume.findByPk(apply.resumeId)
         const user = await User.findByPk(resume.userId)
