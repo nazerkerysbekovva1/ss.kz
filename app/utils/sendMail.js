@@ -4,15 +4,15 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'nur20039@gmail.com',
-    pass: 'xclolhitajqeqrya',
+    user: 'nazerkerysbek32@gmail.com',
+    pass: 'naziko.32',
   },
 });
 
 // Определите функцию для отправки email сообщений
 function sendMail(to, subject, text) {
   const mailOptions = {
-    from: 'nur20039@gmail.com',
+    from: 'nazerkerysbek32@gmail.com',
     to: to,
     subject: subject,
     text: text,
